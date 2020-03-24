@@ -2,15 +2,20 @@
 
 This script is used for modifying production dump file definer to local definer based on (local db user and local db host). After modifying the definer it will automatically import specified databases.
 
-and importing multiple databases.
-
 ### Requirements
 
 * OS - Linux/MacOS
 * Python >= 3.6
 * MySQL, MariaDB or Percona
 
-__NOTE__ - If you are using Percona comment out line 58 and uncomment line 60
+__NOTE__ - If you are using Percona, comment out line 58 and uncomment line 60
+
+```
+# default mysql
+# grant_db_permissions = f"GRANT ALL PRIVILEGES ON {db_name}.* TO {db_user}@{db_host} IDENTIFIED BY {db_password};"
+# percona specific
+grant_db_permissions = f"GRANT ALL PRIVILEGES ON {db_name}.* TO {db_user}@{db_host};"
+```
 
 ### Configuration
 
