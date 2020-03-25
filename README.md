@@ -1,6 +1,6 @@
 # DB Auto Import Script
 
-This script is used for modifying production dump file definer to local definer based on (local db user and local db host). After modifying the definer it will automatically import specified databases.
+This script resolves user definer issue while importing databases from one sql server to another (e.g. production server to local dev server). It modifies user definer entry on all views/stored procedures inside sql dump files. After modifying the definer it will automatically import specified databases.
 
 ### Requirements
 
